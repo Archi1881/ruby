@@ -1,7 +1,7 @@
-print "Основание: "
-a = gets.chomp
+print 'Основание: '
+a = gets.chomp.to_i
 
-print "высота: "
-h = gets.chomp
+print 'высота: '
+h = gets.chomp.to_i
 
-puts "Площадь треугольника = #{0.5*a.to_i*h.to_i}"
+puts "Площадь треугольника = #{0.5 * a * h}"

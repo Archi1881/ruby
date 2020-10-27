@@ -1,11 +1,11 @@
-print "как вас зовут? "
+print 'как вас зовут? '
 name = gets.chomp.capitalize!
 
-print "какой рост? "
-heigth = gets.chomp
+print 'какой рост? '
+heigth = gets.chomp.to_i
 
-if (heigth.to_i - 110)*1.15 <0
+if (heigth - 110) * 1.15 < 0
   puts "Ваш вес #{name} уже оптимальный"
 else 
-	puts " Ваш вес #{(heigth.to_i - 110)*1.15} идеальный"
+  puts " Ваш вес #{(heigth - 110) * 1.15} идеальный"
 end

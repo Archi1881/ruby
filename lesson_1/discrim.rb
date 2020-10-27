@@ -1,27 +1,24 @@
-print "значение а = "
+print 'значение а = '
 a = gets.chomp.to_i
 
-print "значение b = "
+print 'значение b = '
 b = gets.chomp.to_i
 
-print "значение c = "
+print 'значение c = '
 c = gets.chomp.to_i
 
-d = b**2 - 4*a*c
+d = b**2 - 4 * a * c
 
 if d > 0
   i = Math.sqrt(d)
 else
-	puts "невозможно вычислить отрицательный корень"
+  puts 'невозможно вычислить отрицательный корень'
 end
 
-if d > 0 
-	puts " d = #{d}  x_1= #{(-b + i) / (2 * a)}; x_2 = #{(-b - i) / (2 * a)}"
-
+if d > 0
+  puts " d = #{d}  x_1= #{(-b + i) / (2 * a)}; x_2 = #{(-b - i) / (2 * a)}"
 elsif d == 0
-  puts "d = #{d} x_1=x_2= #{-b / (2*a)}"
-
+  puts "d = #{d} x_1=x_2= #{-b / (2 * a)}"
 else
-  puts "Корней нет!"
-
-end    	
+  puts 'Корней нет!'
+end

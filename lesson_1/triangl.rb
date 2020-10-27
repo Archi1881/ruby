@@ -1,21 +1,20 @@
-print "сторона а"
-a = gets.chomp.to_i
+print 'сторона а= '
+a = gets.chomp.to_f
 
-print "сторона b"
-b = gets.chomp.to_i
+print 'сторона b= '
+b = gets.chomp.to_f
 
-print "сторона с"
-c = gets.chomp.to_i
+print 'сторона с= '
+c = gets.chomp.to_f
 
-if (a == b && b == c) 
-	puts " равнобедренный и равносторонний"
+a, b, hypotenuse = [a, b, c].sort
 
-elsif (a == c && a == b)
-  puts "равнобедренный"
-
-elsif c**2 == a**2 + b**2	
-	puts "прямоугольный"
-
+if (a == b && b == hypotenuse)
+  puts ' равнобедренный и равносторонний'
+elsif a == hypotenuse || a == b || b == hypotenuse
+  puts 'равнобедренный'
+elsif hypotenuse**2 == a**2 + b**2
+  puts 'Треугольник прямоугольный'
 else
-	puts "треугольник не существует"	
+  puts 'треугольник не существует'
 end
