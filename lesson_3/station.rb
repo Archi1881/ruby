@@ -1,12 +1,10 @@
 class Station
  
-  attr_reader :name, :trains, :cargo, :passenger
-  
+  attr_reader :name, :trains 
+
   def initialize(name)
     @name = name
     @trains = []
-    @cargo = 0
-    @passenger = 0
   end
   
   def get_train(train)
@@ -18,11 +16,12 @@ class Station
   end
 
   def train_by_type(type)
-    count_trains = 0
+    trains_by_type = []
     @trains.each do |train|
-    if train.type == type
-    count_trains += 1
+      if train.type == type
+        trains_by_type << train     
+      end
+    end
+    return trains_by_type
   end
-
-   puts "#{type}: #{count_trians}"
 end
