@@ -27,42 +27,39 @@ class Train
   end
 
   def get_route(route)
-    @route.stations.index(@current_station)
+    @current_station = route.first_station
+    route.stations.index(@current_station)
     @train_route = route
     @train_route.first_station.get_train(self)
   end
-
-  def current_station
-    @train_route.stations[@route.stations.index(@current_station)]
-  end
-
-  def forward
-    
-    if @route.stations.index(@current_station)+ 1 < @train_route.stations.length
-      @route.stations.index(@current_station) 
-      current_station.send_train(self)
+  
+  def forward    
+    if @train_route.stations.index(@current_station) + 1 < @train_route.stations.length
+      @train_route.stations.index(@current_station) + 1 
+      @current_station.send_train(self)
       next_station.get_train(self)
+      @current_station = @train_route.stations[@train_route.stations.index(@current_station) + 1]
     else
       puts 'Поезд на последней станции, движенеи дальше не возможно'
     end  
   end
 
-  def backward
-    
-    if @route.stations.index(@current_station) > 0
-      @route.stations.index(@current_station) 
-      current_station.send_train(self)
+  def backward    
+    if @train_route.stations.index(@current_station) > 0
+      @train_route.stations.index(@current_station) - 1 
+      @current_station.send_train(self)
       early_station.get_train(self)
+      @current_station = @train_route.stations[@train_route.stations.index(@current_station) - 1]
     else
       puts 'Поезд на первой станции, движение назад не возможно!'
     end
   end
 
   def next_station
-    @train_route.station[@route.stations.index(@current_station) + 1]
+    @train_route.stations[@train_route.stations.index(@current_station) + 1]
   end
 
   def early_station
-    @train_route.station[@route.stations.index(@current_station) - 1]
+    @train_route.stations[@train_route.stations.index(@current_station) - 1]
   end
 end

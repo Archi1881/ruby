@@ -16,12 +16,6 @@ class Station
   end
 
   def train_by_type(type)
-    trains_by_type = []
-    @trains.each do |train|
-      if train.type == type
-        trains_by_type << train     
-      end
-    end
-    return trains_by_type
+    @trains.filter { |train| train.type == type }     
   end
 end
