@@ -34,7 +34,7 @@ class Train
   end
   
   def forward
-    return unless next_station  # возвращает выполнение программы
+    return unless next_station
 
     @current_station.send_train(self)
     @current_station = next_station
@@ -50,10 +50,11 @@ class Train
   end
 
   def next_station
-    @train_route.stations[@train_route.stations.index(@current_station) + 1] #array.index[1,2,3] масссив(0) => 1
+    current_station_index = @train_route.stations.index(@current_station)
+    @train_route.stations[current_station_index + 1] if current_station_index < @train_route.stations.length
   end
 
   def previous_station
-    @train_route.stations[@train_route.stations.index(@current_station) - 1]
+    @train_route.stations[@train_route.stations.index(@current_station) - 1] if @current_station_index > 0
   end
 end
