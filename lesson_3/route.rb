@@ -9,7 +9,7 @@ class Route
   end
 
   def add_stations(interim)
-    @stations.insert(-2, interim)
+    @stations.insert(-2, interim)  #insert вставляет элемент предпоследним элементом
   end
 
   def delete_station(interim)
