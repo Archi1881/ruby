@@ -5,7 +5,6 @@ class Route
     @first_station = first_station
     @last_station = last_station
     @stations = [first_station, last_station]
-    
   end
 
   def add_stations(station)

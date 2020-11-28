@@ -87,7 +87,7 @@ def creat_station
   print 'Введите название станции: '
   name = gets.chomp
   @stations <<(Station.new name)
-  puts "Сщздана станция #{name}"  
+  puts "Сщздана станция #{name}"
 end
 
 def manage_route
@@ -113,11 +113,11 @@ def manage_route
     else
       puts "Выберите каккой-нибудь пункт"
     end
-  end      
+  end
 end
 
 def creat_route
-  puts "Создание маршрута"
+  puts "Создать маршрут."
   print 'Введите название маршрута: '
   name = gets.chomp.to_i
   puts "Список станции: "
@@ -157,7 +157,7 @@ def edit_route
     when 4
       menu
     else
-      puts "Выберите каккой-нибудь пункт"
+      puts "Выберите какой-нибудь пункт"
     end
   end
 end
@@ -258,7 +258,7 @@ def creat_wagon
   else 
     @wagons << (PassengerWagon.new @type)
   end
-  puts "Создан вагон #{@type}"  
+  puts "Создан вагон #{@type}"
 end
 
 def hook_wagon
@@ -370,4 +370,3 @@ end
 
 seed
 menu
-

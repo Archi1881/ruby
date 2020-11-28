@@ -26,6 +26,4 @@ class Station
       end
     end
   end
-
-   #puts "#{type}: #{count_trians}"
 end

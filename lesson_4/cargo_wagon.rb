@@ -1,6 +1,6 @@
 class CargoWagon < Wagon
   
-  def type 
-  	:cargo  	
+  def type
+    :cargo
   end
 end
