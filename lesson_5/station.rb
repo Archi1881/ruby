@@ -1,5 +1,5 @@
 class Station
-  include InstanceMethod
+  include InstanceCounter
  
   attr_reader :name, :trains, :cargo, :passenger, :@all_stations
   

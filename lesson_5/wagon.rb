@@ -1,6 +1,6 @@
 class Wagon
   include Factory
-  include InstanceMethod
+  include InstanceCounter
   
   attr_reader :current_train
 

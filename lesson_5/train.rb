@@ -1,6 +1,6 @@
 class Train
   include Factory
-  include InstanceMethod
+  include InstanceCounter
 
   attr_accessor :speed
   attr_reader :number, :all_wagons, :train_route, :current_station_index
