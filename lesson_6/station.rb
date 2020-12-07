@@ -42,9 +42,8 @@ class Station
   end
   
   protected
-  
+
   def validate!
     raise "Название станции должно содержать не меннее 6 символов" if name.length < 6
-    true
   end
 end

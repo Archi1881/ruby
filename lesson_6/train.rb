@@ -69,13 +69,12 @@ class Train
   def validate!
     raise "Номер поезда должен содержать не менее трех цифр" if number.length < 4
     raise "Введите правильно номер" if number !~ NUMBER_FORMAT
-    true
   end
 
   def next?
     @current_station_index + 1 < @train_route.stations.length
   end
-
+0
   def previous?
     @current_station_index > 0
   end

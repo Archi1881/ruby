@@ -22,6 +22,5 @@ class Wagon
 
   def validate!
     raise "Такого типа вагона не существует" if type != cargo || type != passenger
-    true
   end
 end

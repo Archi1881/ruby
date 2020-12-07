@@ -48,8 +48,10 @@ def menu
 end
 
 def create_train
+  attempt = 0
+  begin
   puts "Создание поезда"
-  print 'Введите название поезда: '
+  print 'Введите номер поезда: '
   number = gets.chomp
   select_type
   if @type == :cargo
@@ -59,6 +61,12 @@ def create_train
      @trains <<(PassengerTrain.new number)
      puts "Создан поезд #{number} - пассажирский"
   end
+rescue RuntimeError => e
+  puts e.message
+  attempt +=1
+  retry if attempt < 3
+  puts "Образец 123-АА "
+end
 end
 
 def select_type
