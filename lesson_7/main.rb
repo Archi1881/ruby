@@ -9,7 +9,7 @@ require_relative 'passenger_wagon'
 require_relative 'cargo_wagon'
 
 class Interface
-
+  
   def menu
     loop do
       puts 'Меню: '
@@ -328,13 +328,12 @@ class Interface
       puts "Вагон #{wagon.number}тип#{wagon.type} свободного объема осталось #{wagon.single_volume}"
       print 'Загрузите вагон в объеме: '
       busy_volume = gets.chomp.to_i
-      wagons.busy_volume(busy_volume)
+      wagons.fill_wagon
       puts "Вагон #{wagon.number}тип#{wagon.type} свободного объема осталось #{wagon.single_volume}"
     else
       puts "Вагон #{wagon.number}тип#{wagon.type} свободного объема осталось #{wagon.single_seats}"
       print'Посадить пассажиров: '
-      busy_seats = gets.chomp.to_i
-      wagons.busy_seats(busy_seats)
+      wagons.fill_wagon
       puts "Вагон #{wagon.number}тип#{wagon.type} свободного объема осталось #{wagon.single_seats}"
     end
 
@@ -395,7 +394,7 @@ class Interface
     @stations = []
     @routes = []
     @wagons = []
-
+    
     @trains << (train1 = CargoTrain.new '111-aa')
     @trains << (train2 = PassengerTrain.new '222-bb')
     @trains << (train3 = CargoTrain.new '333-cc')
@@ -408,6 +407,7 @@ class Interface
     @stations << (station_6 = Station.new 'last_0')
     @routes << (route_1 = Route.new station_1, station_6)
     @routes << (route_2 = Route.new station_3, station_6)
+
   end
 
   def run

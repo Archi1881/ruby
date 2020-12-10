@@ -1,21 +1,11 @@
 class PassengerWagon < Wagon
-	attr_reader :busy_seats
 
-	def initialize(seats = 15)
-		@seats = seats
-		@busy_seats = 0
-	end
+  def initialize(volume = 15)
+    @volume = volume
+  end
 
   def type
     :passenger
-  end
-
-  def busy_seats
-  	@busy_seats += 1 if @busy_seats < @seats
-  end
-
-  def single_seats
-  	@seats - @busy_seats
   end
 
   def valid?
