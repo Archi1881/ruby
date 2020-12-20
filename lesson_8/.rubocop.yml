@@ -1,0 +1,30 @@
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 35
+
+Naming/VariableNumber:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 35
+
+Metrics/AbcSize:
+  Max: 60
+
+Metrics/ClassLength:
+  Max: 500
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Style/ClassVars:
+  Enabled: false
+
+Lint/DuplicateMethods:
+  Enabled: false
+      
